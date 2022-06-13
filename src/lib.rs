@@ -253,7 +253,31 @@ mod tests {
         let count = contrac.review_count();
         assert_eq!(1,count)
     }
+    #[test]
     fn acquire_movie(){
-        
+        let mut contract = App::default();
+        // let mut moviestore = HashMap::new();
+        contract.add_movie(
+            "Nightmare".to_string(),
+            "Martin Luther King-jr".to_string(),
+            "Netflix".to_string(),  
+            "GE".to_string(),
+        );
+        let acquired = contract.get_movie("Nightmare".to_string());
+        let veclength = acquired.len();
+        assert_eq!(3,veclength)
+    }
+    #[test]
+    fn acquire_review(){
+        let mut contrac = App::default();
+        contrac.add_review(
+            String::from("Nightmare"),
+            String::from("Thriller based Movie"),
+            String::from("Jerry Joseph"),
+            String::from("Whatever you do do not fall asleep"),
+        );
+        let acquired = contrac.get_review("Nightmare".to_string());
+        let veclength = acquired.len();
+        assert_eq!(4,veclength)
     }
 }
