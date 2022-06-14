@@ -78,18 +78,30 @@ For the Smart contract using the Command :
     or
     Cargo test -- --nocapture
 Test to confirm of sucess of my Contract
-## Working with Smart Contract
-
-<>
-
-<k>
-
-
-<>
-
-8. Build the contract
+## Build the contract
 
     `RUSTFLAGS='-C link-arg=-s' cargo build --target wasm32-unknown-unknown --release`
+## Working with Smart Contract
+
+###  Adding a Movie 
+    near call dev-1655165689664-15852609649098 add_movie '{"movie_name":"Nightmare","author":"Smith","stream_platform":"Netflix","rated":"GE" }' --account-id jerryj.testnet
+
+###  Counting my Movies
+    near view dev-1655165689664-15852609649098 movie_count  --account-id jerryj.testnet
+### Getting a Movie
+    near call dev-1655165689664-15852609649098 get_movie '{"movie_name":"Nightmare" }' --account-id jerryj.testnet
+### Deleting a Movie 
+    near call dev-1655165689664-15852609649098 remove_movie '{"movie_name":"Nightmare" }' --account-id jerryj.testnet
+### Adding a Movie Review
+    near call dev-1655165689664-15852609649098 add_review '{"movie_name":"Nightmare","description":"Thriller based movie","reviewer":"Jerry Joseph","best_quote":"Whatever you do do not fall asleep" }' --account-id jerryj.testnet
+### Getting a Movie Review
+    near call dev-1655165689664-15852609649098 get_review '{"movie_name":"Nightmare" }' --account-id jerryj.testnet
+### Counting my Movie Reviews
+    near call dev-1655165689664-15852609649098 review_count  --account-id jerryj.testnet
+### Deleting a Movie Review
+    near call dev-1655165689664-15852609649098 remove_review '{"movie_name":"Nightmare" }' --account-id jerryj.testnet
+
+
 
 **Get more info at:**
 
