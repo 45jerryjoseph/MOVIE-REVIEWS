@@ -87,7 +87,7 @@ Test to confirm of sucess of my Contract
     near call dev-1655165689664-15852609649098 add_movie '{"movie_name":"Nightmare","author":"Smith","stream_platform":"Netflix","rated":"GE" }' --account-id jerryj.testnet
 
 ###  Counting my Movies
-    near view dev-1655165689664-15852609649098 movie_count  --account-id jerryj.testnet
+    near call dev-1655165689664-15852609649098 movie_count  --account-id jerryj.testnet
 ### Getting a Movie
     near call dev-1655165689664-15852609649098 get_movie '{"movie_name":"Nightmare" }' --account-id jerryj.testnet
 ### Deleting a Movie 
